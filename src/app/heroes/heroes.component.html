@@ -9,7 +9,7 @@
 
 <h2>My hero list</h2>
 <ul class="heroList">
-    <li *ngFor="let hero of heroes">
+    <li *ngFor="let hero of heroesArr">
         <button class="heroBtn" (click)="onSelect(hero)" [class.selected]="hero===selectedHero">
             <span class="heroId">{{hero.id}}</span>
             <span class="heroName">{{hero.name}}</span>
