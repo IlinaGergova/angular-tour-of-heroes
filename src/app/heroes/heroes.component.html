@@ -10,11 +10,11 @@
 <h2>My hero list</h2>
 <ul class="heroList">
     <li *ngFor="let hero of heroesArr">
-        <button class="heroBtn" (click)="onSelect(hero)" [class.selected]="hero===selectedHero">
+        <a routerLink="/detail/{{hero.id}}">
             <span class="heroId">{{hero.id}}</span>
             <span class="heroName">{{hero.name}}</span>
-        </button>
+        </a>
     </li>
 </ul>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
