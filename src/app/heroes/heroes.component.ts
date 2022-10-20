@@ -26,14 +26,22 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().subscribe(heroes => this.heroesArr = heroes);
   }
 
-  // not used
-  // onSelect(hero: Hero) {
-  //   this.selectedHero = hero;
-  //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  // }
-
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroesArr = heroes);
+  }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => {
+        this.heroesArr.push(hero);
+      });
+  }
+
+  delete(hero: Hero): void {
+    this.heroesArr = this.heroesArr.filter(h => h !== hero);
+    this.heroService.deleteHero(hero.id).subscribe();
   }
 }
