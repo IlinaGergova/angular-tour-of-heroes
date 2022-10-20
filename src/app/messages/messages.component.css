@@ -1,0 +1,28 @@
+.messages {
+    margin-top: 40px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+.clear {
+    border-radius: 0.5rem;
+    padding: 10px;
+    border: none;
+    background-color: rgb(20, 48, 75);
+    color: white;
+    margin-bottom: 20px;
+}
+
+.clear:hover {
+    cursor: pointer;
+    background-color: rgb(102, 156, 209);
+}
+
+.message {
+    color: #369;
+    font-size: large;
+    font-weight: bold;
+    margin: 10px;
+}

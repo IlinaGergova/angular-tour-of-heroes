@@ -1,7 +1,5 @@
-.heroBtn {
-    border: 0;
-    background-color: burlywood;
-    color: white;
+.hero {
+    background-color: #369;
     border-radius: 0.5rem;
     padding: 12px;
     padding-left: 0px;
@@ -9,23 +7,71 @@
     font-size: 20px;
 }
 
-.heroBtn:hover {
+.hero:hover {
     cursor: pointer;
-    background-color: chocolate;
+    background-color: rgb(102, 156, 209);
+}
+
+.hero a {
+    text-decoration: none;
+    color: white;
 }
 
 .heroId {
     font-weight: bold;
     margin-right: 10px;
-    background-color: chocolate;
+    background-color: rgb(20, 48, 75);
     padding: 12px;
     border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .heroList {
     list-style: none;
+    width: 20em;
 }
 
-.selected {
-    background-color: brown;
+.delete {
+    font-weight: bold;
+    color: white;
+    border-radius: 0 0.5rem 0.5rem 0;
+    float: right;
+    font-size: large;
+    border: 0;
+    background-color: transparent;
+}
+
+.delete:hover {
+    cursor: pointer;
+    color: rgb(20, 48, 75);
+}
+
+.add-button {
+    border-radius: 0.5rem;
+    padding: 10px;
+    border: none;
+    background-color: rgb(20, 48, 75);
+    color: white;
+}
+
+.add-button:hover {
+    cursor: pointer;
+    background-color: rgb(102, 156, 209);
+}
+
+.addHero label {
+    color: #369;
+    font-size: large;
+    font-weight: bold;
+}
+
+.addHero input {
+    border-radius: 0.5rem;
+    padding: 10px;
+    border: 2px solid #369;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.addHero {
+    margin-top: 30px;
 }

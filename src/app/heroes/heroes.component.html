@@ -9,7 +9,7 @@
 
 <h2>My hero list</h2>
 <ul class="heroList">
-    <li *ngFor="let hero of heroesArr">
+    <li *ngFor="let hero of heroesArr" class="hero">
         <a routerLink="/detail/{{hero.id}}">
             <span class="heroId">{{hero.id}}</span>
             <span class="heroName">{{hero.name}}</span>
@@ -18,7 +18,7 @@
     </li>
 </ul>
 
-<div>
+<div class="addHero">
     <label for="new-hero">Hero name: </label>
     <input id="new-hero" #heroName />
     <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
