@@ -22,7 +22,7 @@ class FakeHeroService {
   }
 }
 
-fdescribe('HeroesComponent', () => {
+describe('HeroesComponent', () => {
   let component: HeroesComponent;
   let fixture: ComponentFixture<HeroesComponent>;
   let fakeHeroService = new FakeHeroService();

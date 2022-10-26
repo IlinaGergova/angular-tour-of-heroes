@@ -1,23 +1,41 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Observable, of } from 'rxjs';
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
+import { HEROES } from '../mock-heroes';
 
 import { DashboardComponent } from './dashboard.component';
 
-describe('DashboardComponent', () => {
+class FakeHeroService {
+  getHeroes(): Observable<Hero[]> {
+    return of([...HEROES]);
+  }
+}
+fdescribe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
+  let fakeHeroService = new FakeHeroService();
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [DashboardComponent],
+      providers: [{ provide: HeroService, useValue: fakeHeroService }]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should load frist four heroes', () => {
+    component.ngOnInit();
+    const firstFour = HEROES.slice(1, 5);
+    // const firstFour = HEROES.slice(1, 3); 
+    expect(component.heroes).toEqual(firstFour);
+  })
+
 });
