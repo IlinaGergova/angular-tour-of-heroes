@@ -11,7 +11,7 @@ class FakeHeroService {
     return of([...HEROES]);
   }
 }
-fdescribe('DashboardComponent', () => {
+describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
   let fakeHeroService = new FakeHeroService();
